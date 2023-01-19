@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { uiActions } from './ui-slice';
-import sendCartData from './cart-actions';
+// import sendCartData from './cart-actions';
 
 const initialCartState = {
   items: [], 

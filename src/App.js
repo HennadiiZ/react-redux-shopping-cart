@@ -17,13 +17,15 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCartData());
-  }, [fetchCartData]);
+  }, [dispatch]);
 
   useEffect(() => {
     if ( isInitial ) {
       isInitial = false;
       return;
     }
+
+    dispatch(fetchCartData(cart));
   }, [cart, dispatch]);
 
   return (
