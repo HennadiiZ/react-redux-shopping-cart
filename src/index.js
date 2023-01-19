@@ -5,9 +5,6 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './store/index';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
@@ -18,3 +15,5 @@ root.render(
 
 // npm install redux react-redux
 // npm install @reduxjs/toolkit
+
+// 254 Redux & Async Code

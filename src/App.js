@@ -2,8 +2,7 @@ import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { uiSlice } from './store/ui-slice';
+import { useSelector } from 'react-redux';
 
 function App() {
 

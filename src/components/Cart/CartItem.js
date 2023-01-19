@@ -1,13 +1,11 @@
 import classes from './CartItem.module.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-// import { uiActions } from '../../store/ui-slice';
 import { cartActions } from '../../store/cart-slice';
 
 const CartItem = (props) => {
   const { title, quantity, total, price, id } = props.item;
 
-  // const items = useSelector(state => state);
   const dispatch = useDispatch();
 
   const incrementHandler = () => {
