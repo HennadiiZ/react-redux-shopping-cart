@@ -10,7 +10,6 @@ import { uiActions } from './store/ui-slice';
 let isInitial = true;
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(false);
   const showCart = useSelector(state => state.ui.cartIsVisible);
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
@@ -30,16 +29,8 @@ function App() {
       });
 
       if (!response.ok) {
-        // setIsLoading(true);
         throw new Error('Sending cart data failed.');
-        // dispatch(uiActions.showNotification({
-        //   status: 'error',
-        //   title: 'Error!',  
-        //   message: 'Sending cart data failed',
-        // }));
       }
-
-      // const responseData = await response.json();
 
       dispatch(uiActions.showNotification({
         status: 'success',
@@ -47,12 +38,6 @@ function App() {
         message: 'Sent cart data successfully!',
       }));
     };
-
-    // fetch('https://react-redux-e4c1d-default-rtdb.firebaseio.com/cart.json', 
-    // { 
-    //   method: 'PUT', 
-    //   body: JSON.stringify(cart) 
-    // }).then();
 
     if ( isInitial ) {
       isInitial = false;
