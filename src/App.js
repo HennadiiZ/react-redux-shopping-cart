@@ -25,7 +25,10 @@ function App() {
       return;
     }
 
-    dispatch(fetchCartData(cart));
+    if (cart.changed) {
+      dispatch(fetchCartData(cart));
+    }
+
   }, [cart, dispatch]);
 
   return (
