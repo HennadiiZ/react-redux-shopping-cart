@@ -5,7 +5,7 @@ import Notification from './components/UI/Notification';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { useEffect, useState } from 'react';
-import { sendCartData } from './store/cart-slice';
+import { sendCartData, fetchCartData } from './store/cart-actions';
 // import { uiActions } from './store/ui-slice';
 
 let isInitial = true;
@@ -15,6 +15,10 @@ function App() {
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const notification = useSelector(state => state.ui.notification)
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [fetchCartData]);
 
   useEffect(() => {
     // const sendCartData = async () => {
@@ -60,7 +64,7 @@ function App() {
         return;
       }
 
-      dispatch(sendCartData(cart));
+
 
   }, [cart, dispatch]);
 
